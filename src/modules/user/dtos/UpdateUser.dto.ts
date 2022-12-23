@@ -1,8 +1,7 @@
 
 import { IsString } from 'class-validator';
-import { BaseIdDto } from 'src/bases/BaseId.dto';
 
-export class UpdateUserDto extends BaseIdDto {
+export class UpdateUserDto{
     @IsString()
     name: string;
 

@@ -1,9 +1,8 @@
 import { Expose } from 'class-transformer';
+import { BaseIdDto } from 'src/bases/BaseId.dto';
 import { PrimaryGeneratedColumn } from 'typeorm';
 
-export class UserDto {
-    @PrimaryGeneratedColumn()
-    id: number;
+export class UserDto extends BaseIdDto {
 
     @Expose()
     name: string;
