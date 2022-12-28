@@ -1,4 +1,4 @@
-import {Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { BaseService } from 'src/bases/BaseService';
 import { Repository } from 'typeorm';
@@ -18,5 +18,13 @@ export class UserService extends BaseService<UserEntity> {
             return null;
         }
         return this.repo.findOne({ where: { id: id } });
+    }
+
+    findUser(username: string): Promise<UserEntity> {
+        return this.repo.findOne({
+            where: {
+                username: username,
+            },
+        });
     }
 }

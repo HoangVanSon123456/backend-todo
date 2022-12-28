@@ -20,7 +20,7 @@ export class UserController {
     }
 
     @Post()
-    async createUser(@Body() body: UpdateUserDto){
+    async createUser(@Body() body: UpdateUserDto) {
         const response = await this.userService.create(body);
         return response;
     }
