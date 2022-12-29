@@ -1,9 +1,9 @@
 import { BaseIdEntity } from 'src/bases/BaseId.entity';
 import { Column, Entity } from 'typeorm';
+import { Role } from './role.enum';
 
 @Entity('users')
 export class UserEntity extends BaseIdEntity {
-    
     @Column()
     name: string;
 
@@ -15,4 +15,10 @@ export class UserEntity extends BaseIdEntity {
 
     @Column()
     email: string;
+
+    @Column({
+        type: 'enum',
+        enum: Role,
+    })
+    role: Role;
 }
