@@ -1,5 +1,10 @@
-import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, Res } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, UseGuards } from '@nestjs/common';
+import { HasRoles } from 'src/modules/auth/has-roles.decorator';
+import { JwtAuthGuard } from 'src/modules/auth/jwt/jwt-auth.guard';
+import { RoleGuard } from 'src/modules/auth/roles.guard';
+import { AuthService } from 'src/modules/auth/services/auth.serivce';
 import { UpdateUserDto } from '../dtos/UpdateUser.dto';
+import { Role } from '../entities/role.enum';
 import { UserEntity } from '../entities/user.entity';
 import { UserService } from '../services/user.service';
 
@@ -7,6 +12,8 @@ import { UserService } from '../services/user.service';
 export class UserController {
     constructor(private userService: UserService) {}
 
+    // @HasRoles(Role.Admin)
+    // @UseGuards(JwtAuthGuard, RoleGuard)
     @Get()
     async getAll(): Promise<UserEntity[]> {
         const response = await this.userService.getAll();
@@ -20,7 +27,7 @@ export class UserController {
     }
 
     @Post()
-    async createUser(@Body() body: UpdateUserDto) {
+    async createUser(@Body() body: Partial<UpdateUserDto>) {
         const response = await this.userService.create(body);
         return response;
     }
