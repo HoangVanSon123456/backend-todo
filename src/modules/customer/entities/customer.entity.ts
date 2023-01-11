@@ -11,4 +11,10 @@ export class CustomerEntity extends BaseEntity {
 
     @Column()
     email: string;
+
+    @Column()
+    address :string
+
+    @Column()
+    phone : string
 }
