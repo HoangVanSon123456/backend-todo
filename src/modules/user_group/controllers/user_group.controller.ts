@@ -5,7 +5,7 @@ import { RoleGuard } from 'src/modules/auth/roles.guard';
 import { AuthService } from 'src/modules/auth/services/auth.serivce';
 import { UpdateUserGroupDto } from '../dtos/UpdateUserGroup.dto';
 import { UserGroupEntity } from '../entities/user_group.entity';
-import { UserGroupService } from '../services/user.service';
+import { UserGroupService } from '../services/user_group.service';
 
 @Controller('user_group')
 export class UserGroupController {

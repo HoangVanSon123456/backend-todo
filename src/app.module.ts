@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './modules/auth/auth.module';
+import { CowCategoryModule } from './modules/cow_category/cow_category.module';
 import { UserModule } from './modules/user/user.module';
 import { UserGroupModule } from './modules/user_group/user_group.module';
 
@@ -20,6 +21,7 @@ import { UserGroupModule } from './modules/user_group/user_group.module';
         }),
         UserModule,
         UserGroupModule,
+        CowCategoryModule,
         AuthModule,
     ],
     controllers: [AppController],
