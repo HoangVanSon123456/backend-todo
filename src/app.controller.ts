@@ -10,7 +10,7 @@ import { Role } from './modules/user/entities/role.enum';
 
 @Controller()
 export class AppController {
-    constructor(private readonly appService: AppService, private authService: AuthService) {}
+    constructor(private readonly appService: AppService, private authService : AuthService) {}
 
     @Get()
     getHello(): string {
