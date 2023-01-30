@@ -4,7 +4,7 @@ import { JwtAuthGuard } from 'src/modules/auth/jwt/jwt-auth.guard';
 import { RoleGuard } from 'src/modules/auth/roles.guard';
 import { AuthService } from 'src/modules/auth/services/auth.serivce';
 import { UpdateUserDto } from '../dtos/UpdateUser.dto';
-import { Role } from '../entities/role.enum';
+import { Role } from '../types/role.enum';
 import { UserEntity } from '../entities/user.entity';
 import { UserService } from '../services/user.service';
 

@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './modules/auth/auth.module';
 import { UserModule } from './modules/user/user.module';
+import { UserGroupModule } from './modules/user_group/user_group.module';
 
 @Module({
     imports: [
@@ -18,6 +19,7 @@ import { UserModule } from './modules/user/user.module';
             synchronize: true,
         }),
         UserModule,
+        UserGroupModule,
         AuthModule,
     ],
     controllers: [AppController],

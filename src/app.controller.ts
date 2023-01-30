@@ -6,7 +6,7 @@ import { JwtAuthGuard } from './modules/auth/jwt/jwt-auth.guard';
 import { LocalAuthGuard } from './modules/auth/local-auth.guard';
 import { RoleGuard } from './modules/auth/roles.guard';
 import { AuthService } from './modules/auth/services/auth.serivce';
-import { Role } from './modules/user/entities/role.enum';
+import { Role } from './modules/user/types/role.enum';
 
 @Controller()
 export class AppController {

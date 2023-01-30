@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 import { BaseIdDto } from 'src/bases/BaseId.dto';
-import { Role } from '../entities/role.enum';
+import { Role } from '../types/role.enum';
 
 export class UserDto extends BaseIdDto {
 
